@@ -1,5 +1,8 @@
 /*
 programs to be inlcuded
+    - Question on if statements
+    - even odd
+    - leap year
 */
 #include<stdio.h>
 int main(){
