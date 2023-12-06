@@ -1,47 +1,25 @@
-/*
-topic : Array merge 2 array
-Author : Saif
-Organization: TIET, Patiala, India
-Date: 13/09/2023
-Program: To sort the array and perform Binary Search
-*/
 #include <stdio.h>
 int main(){
-    int arr[] = {30, 66, 76, 89, 67, 82, 10};
-    int size = sizeof(arr)/sizeof(arr[0]);
-    int i, j, temp;
-    printf("------ array before sorting -------\n");
-    for(i = 0; i<=size; i++)
-        printf("%d ", arr[i]);
-    printf("\n Now doing Sorting.....\n");
-    for(i=0;i<size; i ++){
-        for(j=0; j<size-i; j++){
-            if(arr[j]>arr[j+1]){
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
+    int arr1[100];
+    int i, max, min, n;
+    printf("Input the number of elements to be stored in the array :");
+    scanf("%d",&n);
+    printf("Input %d elements in the array :\n",n);
+    for(i=0;i<n;i++){
+        printf("element - %d : ",i);
+        scanf("%d",&arr1[i]);
+    }
+    max = arr1[0];
+    min = arr1[0];
+    //finding max
+    for(i=1; i<n; i++){
+        if(arr1[i]>max){
+            max = arr1[i];
+        }
+        //finding min
+        if(arr1[i]<min){
+            min = arr1[i];
         }
     }
-    printf("------ array after sorting -------\n");
-    for(i = 0; i<=size; i++)
-        printf("%d ", arr[i]);
-    // perform Binary Search
-    int n=6,beg=0,end=n-1,result=-1,mid,x;
-    printf("\n What element do you want to search? ");
-    scanf("%d",&x);
-    while(beg<=end){
-        mid=(beg+end)/2;
-        if(arr[mid]<=x) {
-            beg = mid+1; 
-            result = mid;
-        }
-        else 
-            end = mid-1;
-    }
-    if(arr[result]==x) 
-        printf("\nFound");
-    else 
-        printf("\nNot found");
-    return 0;
+    printf(" the min number: %d and Maximun Number: %d ", min, max);
 }

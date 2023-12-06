@@ -1,38 +1,23 @@
 /*
-topic : Array as ADT: Delete
+topic : passing array to function 1
 Author : Saif
 Organization: TIET, Patiala, India
 Date: 21/11/2022
 */
-// C program to implement delete operation in a
-// unsorted array
-#include <stdio.h>
-#include<stdlib.h>
-// Driver's code
+#include<stdio.h>
+int sum_of_elements(int A[]);
 int main(){
-	int i,pos;
-	int arr[] = { 10, 50, 30, 40, 20 };
-	int n = sizeof(arr) / sizeof(arr[0]);
-	int key = 30;
-	printf("Array before deletion\n");
-	for (pos = 0; pos < n; pos++)
-		printf("%d ", arr[pos]);	
-	// delete the element
-    printf("\n-------------------\n");
-    for (pos = 0; pos < n; pos++){
-        printf("%d ", arr[pos]);
-		if (arr[pos]==key){
-			printf(" element found at : %d", pos);
-            break;
-        }
-        else
-            printf("Element not found : \n");
+    int A[] = {1,2,3,4,5};
+    int total = sum_of_elements(A);
+    printf("SUm of elements:%d",total);
+}
+int sum_of_elements(int A[]){
+    int i, sum = 0;
+    int size = sizeof(A)/sizeof(A[0]);
+    printf("in function:: size:%d\n", size);
+    printf("in function:: Size of A = %d, size of A[0] = %d \n", sizeof(A), sizeof(A[0]));
+    for(i = 0; i<size; i++){
+        sum+=A[i];
     }
-    // deleting the element
-    for (i = pos; i < n - 1; i++)
-		arr[i] = arr[i + 1];
-	printf("\nArray after deletion\n");
-	for (i = 0; i < n-1; i++)
-		printf("%d ", arr[i]);
-	return 0;
+    return sum;
 }

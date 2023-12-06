@@ -1,33 +1,16 @@
 /*
-topic : Array merge 2 array
+topic : Passing a single array element to a function
 Author : Saif
 Organization: TIET, Patiala, India
-Date: 13/09/2023
+Date: 21/11/2022
 */
-// C program to merge two sorted arrays/
-#include <stdio.h>
-
-int main()
-{
-	int arr1[] = {1, 3, 5, 7};
-	int n1 = sizeof(arr1) / sizeof(arr1[0]);
-	int arr2[] = {2, 4, 6, 8};
-	int n2 = sizeof(arr2) / sizeof(arr2[0]);
-	int arr3[n1+n2];
-    // Merging Two Arrays
-	//mergeArrays(arr1, arr2, n1, n2, arr3);
-    int i = 0, j = 0, k = 0;
-	// traverse the arr1 and insert its element in arr3
-	while(i < n1){
-	arr3[k++] = arr1[i++];
-	}	
-	// now traverse arr2 and insert in arr3
-	while(j < n2){
-	arr3[k++] = arr2[j++];
-	}
-    printf("------------------------\n");
-	printf("Array after merging:");
-	for (int i=0; i < n1+n2; i++)
-		printf(" %d ", arr3[i]);
-	return 0;
+#include<stdio.h>
+void display(int a);
+int main(){
+    int myArray[] = { 2, 3, 4 };
+    display(myArray[2]); //Passing array element myArray[2] only.
+    return 0;
+}
+void display(int a){
+    printf("%d", a);
 }

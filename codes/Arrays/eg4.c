@@ -1,27 +1,31 @@
 /*
-topic : Array as ADT: Insert at end
+topic : passing array to function 1
 Author : Saif
 Organization: TIET, Patiala, India
-Date: 13/09/2023
+Date: 21/11/2022
 */
-// C program to implement insert
-#include <stdio.h>
+#include<stdio.h>
+int sum_of_elements(int A[], int size);
 int main(){
-	int arr[20] = { 12, 16, 20, 40, 50, 70 };
-	int size = sizeof(arr) / sizeof(arr[0]);
-	int n = 6;
-	int i, key = 26;
-	printf("\n Before Insertion: ");
-    for (i=0; i < size; i++)
-	    printf("%d ", arr[i]);
-    printf("\n--------------------------");
-	// Inserting key
-    if (n >= size)
-		printf("Can not insert with given size");
-	arr[size] = key;
-	printf("\n After  Insertion: ");
-	for (i=0; i < size+1; i++)
-	    printf("%d ", arr[i]);
-    printf("\n---------------------------");
-	return 0;
+    int A[] = {1,2,3,4,5};
+    int size = sizeof(A)/sizeof(A[0]);
+    printf("-----in main function-----\n");
+    printf("Address: %d\n",A);  // base address
+    printf("Address: %d\n", &A[0]); // base address
+    printf("Value: %d\n", A[0]); // value
+    printf("Value: %d\n", *A); // value
+    int total = sum_of_elements(A,size);
+    printf("SUm of elements:%d",total);
+}
+int sum_of_elements(int A[], int size){
+    int i, sum = 0;
+    printf("-----in sum_of_element function-----\n");
+    printf("Address: %d\n",A);  // base address
+    printf("Address: %d\n", &A[0]); // base address
+    printf("Value: %d\n", A[0]); // value
+    printf("Value: %d\n", *A); // value
+    for(i = 0; i<size; i++){
+        sum+=A[i];
+    }
+    return sum;
 }
